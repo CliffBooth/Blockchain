@@ -10,7 +10,7 @@ const parser = new ArgumentParser({
 parser.add_argument('-a', '--address', {help: 'address of this node in following format: host:port'})
 parser.add_argument('-o', '--other', {help: 'addresses of other nodes in following format: "host1:port1 host2:port2 ..."'})
 parser.add_argument('-g', '--genesis', {help: 'optional flag, specifies that this node generates genesis block', action: "store_true"})
-parser.add_argument('-b', '--blocks', {help: 'specify how many blocks node should generate, default = 10'})
+parser.add_argument('-b', '--blocks', {help: 'specify how many blocks node should generate, default = 5'})
 
 const args = parser.parse_args()
 
