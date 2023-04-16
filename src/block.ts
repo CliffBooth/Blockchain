@@ -1,7 +1,7 @@
 import { createHash } from 'node:crypto';
 
-const DATA_LENGTH = 256;
-const GENESIS_HASH = '0'.repeat(64);
+export const DATA_LENGTH = 256;
+export const GENESIS_HASH = '0'.repeat(64);
 
 export type Block = {
     index: number;
@@ -54,15 +54,6 @@ export function blockToString(b: Block) {
     )} hash=${b.hash.substring(0, 4)})`;
 }
 
-export function blockListToString(blocks: Block[]) {
-    return `${blocks.map(el => {
-        return `${el.index} prev_hash=${el.prev_hash.substring(
-            0,
-            4
-        )} hash=${el.hash.substring(0, 4)}\n`;
-    })}`;
-}
-
 export function getHash(
     index: number,
     prev_hash: string,
@@ -73,7 +64,7 @@ export function getHash(
     return createHash('sha256').update(toHash).digest('hex');
 }
 
-function randomString(): string {
+export function randomString(): string {
     let result = '';
     const characters =
         'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
