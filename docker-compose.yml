@@ -13,7 +13,7 @@ services:
       command: npm start -- -a localhost:8081 -o "localhost:8080 localhost:8082" -b 10
       ports:
          - "8081:8081"
-   node_trhee:
+   node_three:
       image: blockchain
       network_mode: host
       command: npm start -- -a localhost:8082 -o "localhost:8080 localhost:8081" -b 10 -g
