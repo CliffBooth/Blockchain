@@ -1,3 +1,7 @@
+main branch [![Tests](https://github.com/CliffBooth/Blockchain/actions/workflows/test.yml/badge.svg?branch=main)](https://github.com/CliffBooth/Blockchain/actions/workflows/test.yml)
+
+develop branch [![Tests](https://github.com/CliffBooth/Blockchain/actions/workflows/test.yml/badge.svg?branch=develop)](https://github.com/CliffBooth/Blockchain/actions/workflows/test.yml)
+
 
 # Blockchain
 
