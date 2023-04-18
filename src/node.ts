@@ -118,7 +118,7 @@ export class Node {
                 const last = this.chain[this.chain.length - 1];
                 const block = newBlock(last);
                 this.nextBlockCandidates.push(block);
-                // console.log(`[${this.address.host}:${this.address.port}] generated ${this.chain[this.chain.length - 1].index + 1} / ${this.toGenerate}`)
+                console.log(`[${this.address.host}:${this.address.port}] generated ${this.chain[this.chain.length - 1].index + 1} / ${this.toGenerate}`)
                 this.log(
                     `BROADCASTING ${
                         this.chain[this.chain.length - 1].index + 1
@@ -143,7 +143,7 @@ export class Node {
                 );
                 this.log(`adding block: ${blockToString(toAdd)}`);
                 this.chain.push(toAdd);
-                console.log(`[${this.address.host}:${this.address.port}] added ${this.chain[this.chain.length - 1].index + 1} / ${this.toGenerate}`)
+                // console.log(`[${this.address.host}:${this.address.port}] added ${this.chain[this.chain.length - 1].index + 1} / ${this.toGenerate}`)
 
                 this.nextBlockCandidates = this.otherReceivedBlocks; //since we can only next index blocks in the otherReceivedBlocks
                 this.otherReceivedBlocks = [];
