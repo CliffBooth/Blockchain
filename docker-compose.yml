@@ -1,21 +1,21 @@
 version: "3.8"
 
 services:
-   node_one:
+   node1:
       image: blockchain
-      network_mode: host
-      command: npm start -- -a localhost:8080 -o "localhost:8081 localhost:8082" -b 10
+      container_name: node1
+      command: npm start -- -a node1:7010 -o "node2:7010 node3:7010" -b 10
       ports:
-           - "8080:8080"
-   node_two:
+           - "7010:7010"
+   node2:
       image: blockchain
-      network_mode: host
-      command: npm start -- -a localhost:8081 -o "localhost:8080 localhost:8082" -b 10
+      container_name: node2
+      command: npm start -- -a node2:7010 -o "node1:7010 node3:7010" -b 10
       ports:
-         - "8081:8081"
-   node_three:
+         - "7011:7010"
+   node3:
       image: blockchain
-      network_mode: host
-      command: npm start -- -a localhost:8082 -o "localhost:8080 localhost:8081" -b 10 -g
+      container_name: node3
+      command: npm start -- -a node3:7010 -o "node1:7010 node2:7010" -b 10 -g
       ports:
-         - "8082:8082"
+         - "7012:7010"

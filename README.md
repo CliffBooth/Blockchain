@@ -23,7 +23,10 @@ This starts 3 nodes in parallel and they start generating blocks until there are
 - [x] Block module unit tests
 
 ### coverage:
+
 Tests coverage:
+
+- block module
 
 | Statements| Functions| Line  |
 |-----------|----------|-------|
