@@ -143,6 +143,7 @@ export class Node {
                 );
                 this.log(`adding block: ${blockToString(toAdd)}`);
                 this.chain.push(toAdd);
+                // console.log(`[${this.address.host}:${this.address.port}] added ${this.chain[this.chain.length - 1].index + 1} / ${this.toGenerate}`)
 
                 this.nextBlockCandidates = this.otherReceivedBlocks; //since we can only next index blocks in the otherReceivedBlocks
                 this.otherReceivedBlocks = [];
@@ -166,12 +167,10 @@ export class Node {
         this.other_nodes.forEach(adr => {
             promises.push(new Promise(resolve => {
                 const client = new net.Socket();
-                let connected = false
                 client.connect(adr.port, adr.host)
                 client.on('connect', () => {
                     client.write(toSend);
                     client.destroy();
-                    connected = true
                     resolve()
                 })
                 client.on('error', async (err: Error) => {
